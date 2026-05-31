@@ -51,7 +51,7 @@ body{
 }
 img{ display:block; max-width:100%; }
 a{ color:inherit; text-decoration:none; }
-button{ font-family:inherit; cursor:pointer; }
+button{ font-family:inherit; cursor:pointer; color:inherit; }
 
 .wrap{ max-width:var(--maxw); margin:0 auto; padding-inline:var(--pad); }
 
@@ -270,8 +270,8 @@ section{ padding-block:clamp(70px,9vw,132px); }
 .scard .pic{ aspect-ratio:1/1; background:#000; border-radius:6px; overflow:hidden; }
 .scard .pic img{ width:100%; height:100%; object-fit:cover; }
 .scard .top{ display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
-.scard h3{ font-family:var(--ff-display); font-weight:500; font-size:21px; letter-spacing:-0.01em; margin:0; }
-.scard .p{ font-family:var(--ff-display); font-weight:600; font-size:21px; }
+.scard h3{ font-family:var(--ff-display); font-weight:500; font-size:21px; letter-spacing:-0.01em; margin:0; color:var(--cy); }
+.scard .p{ font-family:var(--ff-display); font-weight:600; font-size:21px; color:var(--bone); }
 .scard .desc{ font-size:14px; line-height:1.5; color:var(--bone-2); margin-top:9px; }
 .scard .state{ margin-top:13px; display:flex; align-items:center; gap:9px; font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--bone-4); }
 .scard .state i{ width:14px; height:14px; border-radius:50%; border:1px solid var(--bone-4); display:block; }
@@ -282,7 +282,7 @@ section{ padding-block:clamp(70px,9vw,132px); }
 .tcard{ background:var(--ink-2); border:1px solid var(--hair); border-radius:8px; padding:22px; text-align:left; transition:.2s; }
 .tcard .pic{ aspect-ratio:16/9; background:#000; border-radius:6px; overflow:hidden; margin-bottom:18px; }
 .tcard .pic img{ width:100%; height:100%; object-fit:cover; }
-.tcard h3{ font-family:var(--ff-display); font-weight:500; font-size:19px; margin:0 0 7px; letter-spacing:-0.01em; }
+.tcard h3{ font-family:var(--ff-display); font-weight:500; font-size:19px; margin:0 0 7px; letter-spacing:-0.01em; color:var(--cy); }
 .tcard .desc{ font-size:14px; line-height:1.5; color:var(--bone-2); }
 .tcard[aria-pressed="true"]{ border-color:var(--cy); }
 @media(max-width:760px){
@@ -583,8 +583,15 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
 <section>
   <div class="wrap sel">
     <span class="kicker">Configure</span>
-    <h2>Pick your shape. Pick your thickness.</h2>
-    <p class="helper">Same construction across all four. The choice is feel and style of play.</p>
+    <h2>Pick your color, shape, and thickness.</h2>
+    <p class="helper">Same construction across every option. The choice is color, feel and style of play.</p>
+
+    <div class="sel-group-label">Color</div>
+    <div class="chips" id="selColors" style="margin-bottom:44px;">
+      <button class="chip swatch" data-color="pink" aria-pressed="true"><span class="sw" style="background:linear-gradient(135deg,#FF9CC0,#E84393)"></span>Pink</button>
+      <button class="chip swatch" data-color="blue" aria-pressed="false"><span class="sw" style="background:linear-gradient(135deg,#8FD0FF,#3E7BF0)"></span>Blue</button>
+      <button class="chip swatch" data-color="cream" aria-pressed="false"><span class="sw" style="background:linear-gradient(135deg,#F4ECD8,#D9C7A0)"></span>Cream</button>
+    </div>
 
     <div class="sel-group-label">Shape</div>
     <div class="sel-shapes" id="selShapes">
@@ -706,7 +713,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
   }
   function applyColor(){
     document.querySelectorAll('img[data-img]').forEach(function(im){ im.src = imgPath(im.dataset.img); });
-    document.querySelectorAll('#colorChips .chip').forEach(function(c){ c.setAttribute('aria-pressed', c.dataset.color === state.color); });
+    document.querySelectorAll('#colorChips .chip, #selColors .chip').forEach(function(c){ c.setAttribute('aria-pressed', c.dataset.color === state.color); });
     var note = document.getElementById('colorNote'); if(note) note.style.display = (state.color === 'cream') ? 'block' : 'none';
     setHero(state.heroKey || '01-aerograde');
   }
@@ -754,7 +761,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
   }
   bindShape('#shapeChips .chip'); bindShape('#selShapes .scard');
   bindThick('#thickChips .chip'); bindThick('#selThick .tcard');
-  document.querySelectorAll('#colorChips .chip').forEach(function(el){
+  document.querySelectorAll('#colorChips .chip, #selColors .chip').forEach(function(el){
     el.addEventListener('click', function(){ state.color = el.dataset.color; applyColor(); });
   });
   applyColor();
