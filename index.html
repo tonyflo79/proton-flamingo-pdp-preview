@@ -159,6 +159,10 @@ button{ font-family:inherit; cursor:pointer; }
 .chip .sub{ display:block; font-size:11.5px; color:var(--bone-4); margin-top:2px; font-weight:500; }
 .chip[aria-pressed="true"]{ border-color:var(--cy); color:var(--bone); background:rgba(255,111,165,0.07); }
 .chip[aria-pressed="true"] .sub{ color:var(--cy); }
+.chip.swatch{ display:flex; align-items:center; justify-content:center; gap:9px; padding:11px 8px; }
+.chip .sw{ width:16px; height:16px; border-radius:50%; flex:0 0 auto; box-shadow:inset 0 0 0 1px rgba(0,0,0,.3), 0 0 0 1px rgba(255,255,255,.22); }
+.chip .lim{ font-size:9px; letter-spacing:0.08em; opacity:.7; margin-left:5px; }
+.color-note{ font-size:12px; color:var(--bone-3); margin:10px 0 0; }
 
 .micro-trust{ font-size:13px; color:var(--bone-3); text-align:center; margin-top:14px; line-height:1.5; }
 .badges{ display:grid; grid-template-columns:1fr 1fr; gap:9px; }
@@ -372,16 +376,16 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
   <header class="hero">
     <!-- Gallery -->
     <div class="gallery">
-      <div class="main"><img id="heroMain" src="assets/flamingo/01-aerograde.png" alt="Series Three — Project Flamingo paddle, AeroGrade Construction overview" /></div>
+      <div class="main"><img id="heroMain" data-img="01-aerograde" src="assets/flamingo/pink/01-aerograde.png" alt="Series Three — Project Flamingo paddle, AeroGrade Construction overview" /></div>
       <div class="thumbs" id="thumbs">
-        <button class="thumb on" data-src="assets/flamingo/01-aerograde.png" aria-label="AeroGrade Construction"><img src="assets/flamingo/01-aerograde.png" alt="" /></button>
-        <button class="thumb" data-src="assets/flamingo/02-foam-core.png" aria-label="Velocity Foam Core"><img src="assets/flamingo/02-foam-core.png" alt="" /></button>
-        <button class="thumb" data-src="assets/flamingo/03-carbon-face.png" aria-label="Carbon Fiber Face"><img src="assets/flamingo/03-carbon-face.png" alt="" /></button>
-        <button class="thumb" data-src="assets/flamingo/04-dual-stamp.png" aria-label="Dual-Stamped Approval"><img src="assets/flamingo/04-dual-stamp.png" alt="" /></button>
-        <button class="thumb" data-src="assets/flamingo/06-elongated.png" aria-label="Elongated"><img src="assets/flamingo/06-elongated.png" alt="" /></button>
-        <button class="thumb" data-src="assets/flamingo/07-wide-body.png" aria-label="Wide Body"><img src="assets/flamingo/07-wide-body.png" alt="" /></button>
-        <button class="thumb" data-src="assets/flamingo/08-13mm.png" aria-label="13mm"><img src="assets/flamingo/08-13mm.png" alt="" /></button>
-        <button class="thumb" data-src="assets/flamingo/09-15mm.png" aria-label="15mm"><img src="assets/flamingo/09-15mm.png" alt="" /></button>
+        <button class="thumb on" data-img="01-aerograde" aria-label="AeroGrade Construction"><img data-img="01-aerograde" src="assets/flamingo/pink/01-aerograde.png" alt="" /></button>
+        <button class="thumb" data-img="02-foam-core" aria-label="Velocity Foam Core"><img data-img="02-foam-core" src="assets/flamingo/pink/02-foam-core.png" alt="" /></button>
+        <button class="thumb" data-img="03-carbon-face" aria-label="Carbon Fiber Face"><img data-img="03-carbon-face" src="assets/flamingo/pink/03-carbon-face.png" alt="" /></button>
+        <button class="thumb" data-img="04-dual-stamp" aria-label="Dual-Stamped Approval"><img data-img="04-dual-stamp" src="assets/flamingo/pink/04-dual-stamp.png" alt="" /></button>
+        <button class="thumb" data-img="06-elongated" aria-label="Elongated"><img data-img="06-elongated" src="assets/flamingo/pink/06-elongated.png" alt="" /></button>
+        <button class="thumb" data-img="07-wide-body" aria-label="Wide Body"><img data-img="07-wide-body" src="assets/flamingo/pink/07-wide-body.png" alt="" /></button>
+        <button class="thumb" data-img="08-13mm" aria-label="13mm"><img data-img="08-13mm" src="assets/flamingo/pink/08-13mm.png" alt="" /></button>
+        <button class="thumb" data-img="09-15mm" aria-label="15mm"><img data-img="09-15mm" src="assets/flamingo/pink/09-15mm.png" alt="" /></button>
       </div>
       <div class="hero-promise desk-only">
         <p>Pop the moment it touches the ball — and the feel to place it. <span class="grad">That's what the Velocity Foam Core gives you</span> — solid foam for power, a honeycomb structure for springy response, optimized power, spin, feel and control.</p>
@@ -401,7 +405,15 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
 
       <hr class="rule" />
 
-      <div class="opt-label">Shape</div>
+      <div class="opt-label">Colorway</div>
+      <div class="chips" id="colorChips">
+        <button class="chip swatch" data-color="pink" aria-pressed="true"><span class="sw" style="background:linear-gradient(135deg,#FF9CC0,#E84393)"></span>Pink</button>
+        <button class="chip swatch" data-color="blue" aria-pressed="false"><span class="sw" style="background:linear-gradient(135deg,#8FD0FF,#3E7BF0)"></span>Blue</button>
+        <button class="chip swatch" data-color="cream" aria-pressed="false"><span class="sw" style="background:linear-gradient(135deg,#F4ECD8,#D9C7A0)"></span>Cream<span class="lim">LIMITED</span></button>
+      </div>
+      <p class="color-note" id="colorNote" style="display:none;">Cream is a limited release — photos coming soon.</p>
+
+      <div class="opt-label" style="margin-top:18px;">Shape</div>
       <div class="chips" id="shapeChips">
         <button class="chip" data-shape="Elongated" data-price="175" aria-pressed="false">Elongated<span class="sub">$175 · more reach</span></button>
         <button class="chip" data-shape="Wide-Body" data-price="175" aria-pressed="true">Wide-Body<span class="sub">$175 · bigger sweet spot</span></button>
@@ -487,7 +499,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
 <section class="bg-2">
   <div class="wrap">
     <div class="aero">
-      <div class="img"><img src="assets/flamingo/01-aerograde.png" alt="AeroGrade Construction — the whole build, with feature pointers" /></div>
+      <div class="img"><img data-img="01-aerograde" src="assets/flamingo/pink/01-aerograde.png" alt="AeroGrade Construction — the whole build, with feature pointers" /></div>
       <div>
         <span class="kicker">The whole build</span>
         <h2><img class="aero-mark" src="assets/brand/proton-atom.png" alt="" aria-hidden="true" /><span class="grad">AeroGrade Construction™</span></h2>
@@ -499,7 +511,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
 
     <!-- 02 Foam Core -->
     <div class="feature">
-      <div class="fimg"><img src="assets/flamingo/02-foam-core.png" alt="Velocity Foam Core — foam + honeycomb cutaway" /></div>
+      <div class="fimg"><img data-img="02-foam-core" src="assets/flamingo/pink/02-foam-core.png" alt="Velocity Foam Core — foam + honeycomb cutaway" /></div>
       <div class="ftext">
       <h3 class="ghead">Velocity Foam Core</h3>
         <p>A foam-and-honeycomb hybrid at the heart of the paddle — solid foam for power, a honeycomb structure for springy responsiveness. Built for pop, feel, and a lively, fast face.</p>
@@ -508,7 +520,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
 
     <!-- 03 Carbon Face -->
     <div class="feature flip">
-      <div class="fimg"><img src="assets/flamingo/03-carbon-face.png" alt="Aerospace Grade Carbon Fiber Face — loupe macro" /></div>
+      <div class="fimg"><img data-img="03-carbon-face" src="assets/flamingo/pink/03-carbon-face.png" alt="Aerospace Grade Carbon Fiber Face — loupe macro" /></div>
       <div class="ftext">
         <h3 class="ghead">Aerospace Grade Carbon Fiber Face — Roughness Enhanced</h3>
         <p>The hitting surface is aerospace grade carbon fiber, engineered into a single structural part. The roughness is part of the carbon itself — structurally integrated for optimized spin, not added on after.</p>
@@ -517,7 +529,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
 
     <!-- 04 Dual-Stamp -->
     <div class="feature">
-      <div class="fimg"><img src="assets/flamingo/04-dual-stamp.png" alt="Dual-Stamped Approval — seal detail" /></div>
+      <div class="fimg"><img data-img="04-dual-stamp" src="assets/flamingo/pink/04-dual-stamp.png" alt="Dual-Stamped Approval — seal detail" /></div>
       <div class="ftext">
         <h3 class="ghead">Dual-Stamped Approval</h3>
         <p>Approved by both UPA and USA Pickleball — pushing the legal maximum of performance. One paddle. Both rule sets. Playable in every sanctioned league and tournament.</p>
@@ -577,7 +589,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
     <div class="sel-group-label">Shape</div>
     <div class="sel-shapes" id="selShapes">
       <button class="scard" data-shape="Elongated" data-price="175" aria-pressed="false">
-        <div class="pic"><img src="assets/flamingo/06-elongated.png" alt="Elongated paddle" /></div>
+        <div class="pic"><img data-img="06-elongated" src="assets/flamingo/pink/06-elongated.png" alt="Elongated paddle" /></div>
         <div>
           <div class="top"><h3>Elongated</h3><span class="p">$175</span></div>
           <p class="desc">More reach. More speed. Extra leverage. A longer hitting surface with a slightly tighter sweet spot — favors singles and players who want more speed.</p>
@@ -585,7 +597,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
         </div>
       </button>
       <button class="scard" data-shape="Wide-Body" data-price="175" aria-pressed="true">
-        <div class="pic"><img src="assets/flamingo/07-wide-body.png" alt="Wide-Body paddle" /></div>
+        <div class="pic"><img data-img="07-wide-body" src="assets/flamingo/pink/07-wide-body.png" alt="Wide-Body paddle" /></div>
         <div>
           <div class="top"><h3>Wide-Body</h3><span class="p">$175</span></div>
           <p class="desc">Bigger sweet spot. Maximum forgiveness. A shorter, wider face — favors doubles, control at the kitchen, and forgiveness on off-center hits.</p>
@@ -597,12 +609,12 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
     <div class="sel-group-label">Thickness</div>
     <div class="sel-thick" id="selThick">
       <button class="tcard" data-thick="13mm" aria-pressed="false">
-        <div class="pic"><img src="assets/flamingo/08-13mm.png" alt="13mm cross-section" /></div>
+        <div class="pic"><img data-img="08-13mm" src="assets/flamingo/pink/08-13mm.png" alt="13mm cross-section" /></div>
         <h3>13mm</h3>
         <p class="desc">Faster pop. More power. Quicker hands at the net.</p>
       </button>
       <button class="tcard" data-thick="15mm" aria-pressed="true">
-        <div class="pic"><img src="assets/flamingo/09-15mm.png" alt="15mm cross-section" /></div>
+        <div class="pic"><img data-img="09-15mm" src="assets/flamingo/pink/09-15mm.png" alt="15mm cross-section" /></div>
         <h3>15mm</h3>
         <p class="desc">More control. More feel. Steadier resets and dinks.</p>
       </button>
@@ -680,19 +692,27 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
   var heroMain = document.getElementById('heroMain');
   thumbs.addEventListener('click', function(e){
     var b = e.target.closest('.thumb'); if(!b) return;
-    setHero(b.dataset.src);
+    setHero(b.dataset.img);
   });
 
   // ---- Variant → hero image (clicking a Shape/Thickness button shows that SKU's image in the header) ----
-  var SHAPE_IMG = { 'Elongated':'assets/flamingo/06-elongated.png', 'Wide-Body':'assets/flamingo/07-wide-body.png' };
-  var THICK_IMG = { '13mm':'assets/flamingo/08-13mm.png', '15mm':'assets/flamingo/09-15mm.png' };
-  function setHero(src){
-    heroMain.src = src;
-    thumbs.querySelectorAll('.thumb').forEach(function(t){ t.classList.toggle('on', t.dataset.src === src); });
+  var SHAPE_IMG = { 'Elongated':'06-elongated', 'Wide-Body':'07-wide-body' };
+  var THICK_IMG = { '13mm':'08-13mm', '15mm':'09-15mm' };
+  function imgPath(key){ return 'assets/flamingo/' + state.color + '/' + key + '.png'; }
+  function setHero(key){
+    state.heroKey = key;
+    heroMain.src = imgPath(key); heroMain.dataset.img = key;
+    thumbs.querySelectorAll('.thumb').forEach(function(t){ t.classList.toggle('on', t.dataset.img === key); });
+  }
+  function applyColor(){
+    document.querySelectorAll('img[data-img]').forEach(function(im){ im.src = imgPath(im.dataset.img); });
+    document.querySelectorAll('#colorChips .chip').forEach(function(c){ c.setAttribute('aria-pressed', c.dataset.color === state.color); });
+    var note = document.getElementById('colorNote'); if(note) note.style.display = (state.color === 'cream') ? 'block' : 'none';
+    setHero(state.heroKey || '01-aerograde');
   }
 
   // ---- Shared SKU state (hero chips + selector cards stay in sync) ----
-  var state = { shape:'Wide-Body', shapePrice:175, thick:'15mm' };
+  var state = { shape:'Wide-Body', shapePrice:175, thick:'15mm', color:'pink', heroKey:'01-aerograde' };
 
   function priceFor(shape){ return 175; }
 
@@ -734,6 +754,10 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
   }
   bindShape('#shapeChips .chip'); bindShape('#selShapes .scard');
   bindThick('#thickChips .chip'); bindThick('#selThick .tcard');
+  document.querySelectorAll('#colorChips .chip').forEach(function(el){
+    el.addEventListener('click', function(){ state.color = el.dataset.color; applyColor(); });
+  });
+  applyColor();
   render();
 
   // ---- FAQ accordion (native <details>, animated height) ----
