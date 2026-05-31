@@ -127,7 +127,7 @@ button{ font-family:inherit; cursor:pointer; }
   aspect-ratio:1/1; background:#000; border:1px solid var(--hair); border-radius:6px; overflow:hidden;
 }
 .gallery .main img{ width:100%; height:100%; object-fit:cover; }
-.thumbs{ display:grid; grid-template-columns:repeat(9,1fr); gap:8px; margin-top:10px; }
+.thumbs{ display:grid; grid-template-columns:repeat(8,1fr); gap:8px; margin-top:10px; }
 .thumb{
   aspect-ratio:1/1; background:#000; border:1px solid var(--hair); border-radius:4px; overflow:hidden;
   padding:0; opacity:.5; transition:opacity .2s, border-color .2s;
@@ -169,7 +169,7 @@ button{ font-family:inherit; cursor:pointer; }
 @media(max-width:920px){
   .hero{ grid-template-columns:1fr; gap:30px; }
   .buybox{ position:static; }
-  .thumbs{ grid-template-columns:repeat(9,1fr); }
+  .thumbs{ grid-template-columns:repeat(8,1fr); }
   .buybox > .kicker{ display:none; }              /* hide the Series Three eyebrow on mobile */
   .hero-promise.desk-only{ display:none; }         /* desktop promise hidden on mobile */
   .hero-promise.mob-only{ display:block; margin-top:30px; max-width:none; } /* show promise below the trust badges */
@@ -246,7 +246,7 @@ section{ padding-block:clamp(70px,9vw,132px); }
 
 /* Proof */
 .proof{ max-width:1000px; margin:0 auto; }
-.proof-badges{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin:clamp(36px,4vw,56px) 0; }
+.proof-badges{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin:clamp(36px,4vw,56px) 0; }
 .pbadge{ border:1px solid var(--hair-2); border-radius:6px; padding:22px 16px; text-align:center; background:rgba(255,111,165,0.03); }
 .pbadge .ring{ width:54px; height:54px; border-radius:50%; border:1px solid var(--hair-2); display:grid; place-items:center; margin:0 auto 14px; font-family:var(--ff-display); font-weight:600; font-size:14px; }
 .pbadge .lbl{ font-size:12.5px; line-height:1.4; color:var(--bone-2); font-weight:500; }
@@ -341,25 +341,6 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
 </style>
 </head>
 <body>
-<!-- ============================================================
-     FLAMINGO BUILD — SCAFFOLD (mechanical bits done)
-     Done: cloned Peacock template, recolored accent -> flamingo pink,
-           swapped SKU identity (Peacock->Flamingo) + asset paths.
-     TODO tomorrow (see flamingo-site-build-handoff.md). Each spot below is
-     tagged inline with a FLAMINGO TODO marker (search "FLAMINGO TODO"):
-       - Hero H1 / deck / promise (Velocity Core + pop/feel, drop Backed-for-Life)  gate#8
-       - Construction body: core line + drop lifetime warranty
-       - Feature row 1: Atomic Foam Core -> Velocity Hybrid Core (foam+honeycomb)
-       - Feature row 4: warranty (Flamingo term, NOT lifetime)                       gate#1
-       - Counter "What If It's Your Paddle?": durability arg -> rework/drop           gate#6
-       - Certs warranty badge / trust badges / micro-trust / footer: drop lifetime
-       - FAQ #2 (warranty); consider adding "Atomic vs Velocity core" FAQ            gate#1
-       - Close anchor
-       - Prices everywhere                                                            gate#2
-       - Pros photos+names -> Genie / Augie Ge / Jalina Ingram (+4th)                 gate#3
-       - Regenerate the 9 product images from Flamingo Pink renders (placeholders
-         here are the Peacock teal renders)                                          gate#4 (velocity core render)
-     ============================================================ -->
 
 <!-- ============ NAV ============ -->
 <nav class="nav">
@@ -394,37 +375,35 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
       <div class="main"><img id="heroMain" src="assets/flamingo/01-aerograde.png" alt="Series Three — Project Flamingo paddle, AeroGrade Construction overview" /></div>
       <div class="thumbs" id="thumbs">
         <button class="thumb on" data-src="assets/flamingo/01-aerograde.png" aria-label="AeroGrade Construction"><img src="assets/flamingo/01-aerograde.png" alt="" /></button>
-        <button class="thumb" data-src="assets/flamingo/02-foam-core.png" aria-label="Atomic Foam Core"><img src="assets/flamingo/02-foam-core.png" alt="" /></button>
+        <button class="thumb" data-src="assets/flamingo/02-foam-core.png" aria-label="Velocity Foam Core"><img src="assets/flamingo/02-foam-core.png" alt="" /></button>
         <button class="thumb" data-src="assets/flamingo/03-carbon-face.png" aria-label="Carbon Fiber Face"><img src="assets/flamingo/03-carbon-face.png" alt="" /></button>
         <button class="thumb" data-src="assets/flamingo/04-dual-stamp.png" aria-label="Dual-Stamped Approval"><img src="assets/flamingo/04-dual-stamp.png" alt="" /></button>
-        <button class="thumb" data-src="assets/flamingo/05-warranty.png" aria-label="Lifetime Warranty"><img src="assets/flamingo/05-warranty.png" alt="" /></button>
         <button class="thumb" data-src="assets/flamingo/06-elongated.png" aria-label="Elongated"><img src="assets/flamingo/06-elongated.png" alt="" /></button>
         <button class="thumb" data-src="assets/flamingo/07-wide-body.png" aria-label="Wide Body"><img src="assets/flamingo/07-wide-body.png" alt="" /></button>
         <button class="thumb" data-src="assets/flamingo/08-13mm.png" aria-label="13mm"><img src="assets/flamingo/08-13mm.png" alt="" /></button>
         <button class="thumb" data-src="assets/flamingo/09-15mm.png" aria-label="15mm"><img src="assets/flamingo/09-15mm.png" alt="" /></button>
       </div>
       <div class="hero-promise desk-only">
-        <p>The paddle that plays the same at month six as the first time you picked it up. <span class="grad">That's what AeroGrade construction gives you</span> — leading to optimized power, spin, feel and control across the long lifetime of the paddle.</p>
+        <p>Pop the moment it touches the ball — and the feel to place it. <span class="grad">That's what the Velocity Foam Core gives you</span> — solid foam for power, a honeycomb structure for springy response, optimized power, spin, feel and control.</p>
       </div>
     </div>
 
     <!-- Buy box -->
     <div class="buybox">
       <span class="kicker">Series Three — Project Flamingo · Dual-stamp UPA + USA Pickleball</span>
-      <!-- FLAMINGO TODO: gate#8 — H1: "Atomic Foam Core"->"Velocity Core"; drop "Backed for Life" -> pop/feel anchor -->
-      <h1>Aerospace Technology.<br><span class="grad">Atomic Foam Core.<br>Optimized Spin.</span><br>Backed for Life.</h1>
-      <p class="lede">The High-Density Atomic Foam Core, AeroGrade Carbon Fiber Face and Lifetime Warranty on the Construction make this the most durable high-performance paddle in the industry.</p>
+      <h1>Aerospace Technology.<br><span class="grad">Velocity Foam Core.<br>Optimized Spin.</span><br>Built for Pop &amp; Feel.</h1>
+      <p class="lede">The Velocity Foam Core and AeroGrade Carbon Fiber Face make this the liveliest high-performance paddle in the lineup — built for pop and feel without giving up power.</p>
 
       <hr class="rule" />
 
       <div class="price-row"><span class="price" id="priceMain">$175</span><span class="price-tag" id="priceTag">Wide-Body · 15mm</span></div>
-      <div class="was">Was <s>$280</s> · relaunch pricing · Elongated $195 / Wide-Body $175</div>
+      <div class="was">Was <s>$280</s> · relaunch pricing · $175 every shape</div>
 
       <hr class="rule" />
 
       <div class="opt-label">Shape</div>
       <div class="chips" id="shapeChips">
-        <button class="chip" data-shape="Elongated" data-price="195" aria-pressed="false">Elongated<span class="sub">$195 · more reach</span></button>
+        <button class="chip" data-shape="Elongated" data-price="175" aria-pressed="false">Elongated<span class="sub">$175 · more reach</span></button>
         <button class="chip" data-shape="Wide-Body" data-price="175" aria-pressed="true">Wide-Body<span class="sub">$175 · bigger sweet spot</span></button>
       </div>
 
@@ -437,20 +416,20 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
       <hr class="rule" />
 
       <button class="btn" style="width:100%;">Add Flamingo to Cart <span class="arr">→</span></button>
-      <p class="micro-trust">Backed for life. 30-day money-back. Dual-stamp UPA + USA Pickleball.</p>
+      <p class="micro-trust">Built for pop &amp; feel. 30-day money-back. Dual-stamp UPA + USA Pickleball.</p>
 
       <hr class="rule" />
 
       <div class="badges">
         <div class="badge">Dual-Stamped — UPA + USA Pickleball</div>
-        <div class="badge">Lifetime Warranty on Construction</div>
+        <div class="badge">Velocity Foam Core — pop &amp; feel</div>
         <div class="badge">30-Day Money-Back</div>
         <div class="badge">$280 prior retail → relaunch pricing</div>
       </div>
 
       <!-- Mobile-only: promise paragraph below the trust badges (hidden on desktop) -->
       <div class="hero-promise mob-only">
-        <p>The paddle that plays the same at month six as the first time you picked it up. <span class="grad">That's what AeroGrade construction gives you</span> — leading to optimized power, spin, feel and control across the long lifetime of the paddle.</p>
+        <p>Pop the moment it touches the ball — and the feel to place it. <span class="grad">That's what the Velocity Foam Core gives you</span> — solid foam for power, a honeycomb structure for springy response, optimized power, spin, feel and control.</p>
       </div>
     </div>
   </header>
@@ -463,9 +442,9 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
       <div class="reframe-copy">
         <span class="kicker">Construction</span>
         <h2 class="reframe-head">Series Three — Project Flamingo is built on a single construction story.</h2>
-        <p class="body">Aerospace grade carbon fiber as the hitting surface. The rough texture, enhanced for optimized spin, is structurally integrated into the carbon. An Atomic Foam Core at the heart of the paddle. With extra durability built into every layer. Backed by a lifetime warranty on the construction.</p>
+        <p class="body">Aerospace grade carbon fiber as the hitting surface. The rough texture, enhanced for optimized spin, is structurally integrated into the carbon. A Velocity Foam Core at the heart of the paddle — solid foam for power, a honeycomb structure for springy pop. Built for liveliness and feel.</p>
       </div>
-      <div class="reframe-photo"><img src="assets/flamingo/people/construction.png" alt="Carbon fiber and Atomic Foam Core layup in manufacturing" /></div>
+      <div class="reframe-photo"><img src="assets/flamingo/people/construction.png" alt="Carbon fiber and Velocity Foam Core layup in manufacturing" /></div>
     </div>
   </div>
 </section>
@@ -475,7 +454,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
   <div class="wrap">
     <span class="kicker">Pros play Proton</span>
     <h2 class="display" style="font-size:clamp(32px,4vw,52px);margin:16px 0 16px;letter-spacing:-0.025em;line-height:1.04;">Played at the highest level.</h2>
-    <p class="lede" style="max-width:780px;">The same construction you can buy — AeroGrade Construction, Dual-Stamp Approved, Backed for Life — is the paddle many top pros compete with on tour.</p>
+    <p class="lede" style="max-width:780px;">The same construction you can buy — AeroGrade Construction, Dual-Stamp Approved, built for pop and feel — is the paddle many top pros compete with on tour.</p>
 
     <div class="pros-grid">
       <figure class="pro">
@@ -500,7 +479,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
       </figure>
     </div>
 
-    <p class="pros-foot">Tournament-legal. Backed for life. Built to compete.</p>
+    <p class="pros-foot">Tournament-legal. Built for pop. Built to compete.</p>
   </div>
 </section>
 
@@ -512,7 +491,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
       <div>
         <span class="kicker">The whole build</span>
         <h2><img class="aero-mark" src="assets/brand/proton-atom.png" alt="" aria-hidden="true" /><span class="grad">AeroGrade Construction™</span></h2>
-        <p><span class="em">AeroGrade Construction™</span> is Proton's paddle build process inspired by our founder's roots as an aerospace industry leader. The rough texture is structurally integrated into the aerospace grade carbon fiber — making the roughness part of the carbon itself. At the heart of the paddle sits the Atomic Foam Core — a precision-engineered, consistent foam core — drilled with the Proton logo to reduce weight and deliver a larger, more forgiving sweet spot. <span class="em">The face is rough because the carbon is rough. The core is consistent because the foam is designed for performance and longevity.</span></p>
+        <p><span class="em">AeroGrade Construction™</span> is Proton's paddle build process inspired by our founder's roots as an aerospace industry leader. The rough texture is structurally integrated into the aerospace grade carbon fiber — making the roughness part of the carbon itself. At the heart of the paddle sits the Velocity Foam Core — solid foam for power, engineered with a honeycomb structure for springy, lively response. <span class="em">The face is rough because the carbon is rough. The core is fast because the honeycomb is built for pop.</span></p>
       </div>
     </div>
 
@@ -520,11 +499,10 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
 
     <!-- 02 Foam Core -->
     <div class="feature">
-      <div class="fimg"><img src="assets/flamingo/02-foam-core.png" alt="High-Density Atomic Foam Core — cutaway" /></div>
+      <div class="fimg"><img src="assets/flamingo/02-foam-core.png" alt="Velocity Foam Core — foam + honeycomb cutaway" /></div>
       <div class="ftext">
-        <!-- FLAMINGO TODO: Velocity Hybrid Core — foam+honeycomb, built for pop & feel (rewrite heading + body below) -->
-      <h3 class="ghead">High-Density Atomic Foam Core</h3>
-        <p>A precision-engineered, consistent foam core is at the heart of the paddle. Drilled with the Proton logo to reduce weight and enlarge the sweet spot. Built for extra durability and shot-to-shot consistency.</p>
+      <h3 class="ghead">Velocity Foam Core</h3>
+        <p>A foam-and-honeycomb hybrid at the heart of the paddle — solid foam for power, a honeycomb structure for springy responsiveness. Built for pop, feel, and a lively, fast face.</p>
       </div>
     </div>
 
@@ -546,16 +524,6 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
       </div>
     </div>
 
-    <!-- 05 Warranty -->
-    <div class="feature flip">
-      <div class="fimg"><img src="assets/flamingo/05-warranty.png" alt="Lifetime Warranty on Construction — seal" /></div>
-      <div class="ftext">
-        <!-- FLAMINGO TODO: gate#1 — Flamingo warranty (NOT lifetime), or replace this slot with a Velocity/pop benefit -->
-      <h3 class="ghead">Lifetime Warranty on Construction</h3>
-        <p>Proton stands behind the build for as long as the original owner plays. Full coverage on the carbon surface and the Atomic Foam Core.</p>
-      </div>
-    </div>
-
     <div class="inline-cta">
       <button class="btn">Add Flamingo to Cart <span class="arr">→</span></button>
     </div>
@@ -572,21 +540,19 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
       </div>
       <div>
         <h2 class="ghead" style="margin-bottom:18px;">The founder behind the build</h2>
-        <p class="body">Charles Darling, an aerospace executive, designed the construction to deliver maximum performance and consistency. He brought the same advanced technology used in high-stress structural applications into the paddle engineering: the roughness built into the carbon, the foam tuned to a consistent density, and a lifetime warranty behind the build that has to be defensible because the engineering is real.</p>
+        <p class="body">Charles Darling, an aerospace executive, designed the construction to deliver maximum performance and feel. He brought the same advanced technology used in high-stress structural applications into the paddle engineering: the roughness built into the carbon, and a Velocity Foam Core tuned for pop and feel — engineering you can feel on every shot.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ============ COUNTER — What if it's your paddle? ============ -->
-<!-- NOTE: contains the competitor/durability line — client may soften or remove. Editable. -->
 <section class="bg-2 center brandmark-wrap">
   <img class="brandmark-bg" src="assets/brand/proton-atom.png" alt="" aria-hidden="true" />
   <div class="wrap">
-    <!-- FLAMINGO TODO: gate#6 — durability/degradation counter does not fit Flamingo; rework to pop/feel or drop section -->
-      <h2 class="ghead" style="font-size:clamp(34px,4.2vw,56px);margin:0 auto 26px;max-width:1000px;">What If It's Your Paddle?</h2>
-    <p class="lede" style="max-width:860px;margin:0 auto;font-size:clamp(18px,1.85vw,23px);">If you've ever felt your spin or your pop fade, the first instinct is to question yourself. Yet many premium paddles begin to degrade in performance around the second or third month of active use. The Flamingo is engineered so that doesn't happen: roughness built into the carbon, an atomic foam core built for extra durability, and a lifetime warranty behind the build.</p>
-    <p class="proof-quote" style="margin-top:clamp(34px,4vw,52px);"><span class="grad">Pushing paddle design to the legal max. Backed for life.</span></p>
+      <h2 class="ghead" style="font-size:clamp(34px,4.2vw,56px);margin:0 auto 26px;max-width:1000px;">Want More Pop — Without Losing Control?</h2>
+    <p class="lede" style="max-width:860px;margin:0 auto;font-size:clamp(18px,1.85vw,23px);">Most paddles make you choose: pop or control. The Flamingo is engineered for both — aerospace grade carbon fiber with the roughness structurally integrated for spin, and a Velocity Foam Core that pairs solid foam for power with a honeycomb structure for springy, lively response. Pop when you want it, control when you need it.</p>
+    <p class="proof-quote" style="margin-top:clamp(34px,4vw,52px);"><span class="grad">Pushing paddle design to the legal max. Built for pop and feel.</span></p>
   </div>
 </section>
 
@@ -596,7 +562,6 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
     <div class="proof-badges" style="margin:0;">
       <div class="pbadge"><div class="ring"><span class="grad">UPA</span></div><div class="lbl">UPA Pro Certified</div></div>
       <div class="pbadge"><div class="ring"><span class="grad">USA</span></div><div class="lbl">USA Pickleball Approved</div></div>
-      <div class="pbadge"><div class="ring"><span class="grad">∞</span></div><div class="lbl">Lifetime Warranty on Construction</div></div>
       <div class="pbadge"><div class="ring"><span class="grad">30d</span></div><div class="lbl">30-Day Money-Back</div></div>
     </div>
   </div>
@@ -611,10 +576,10 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
 
     <div class="sel-group-label">Shape</div>
     <div class="sel-shapes" id="selShapes">
-      <button class="scard" data-shape="Elongated" data-price="195" aria-pressed="false">
+      <button class="scard" data-shape="Elongated" data-price="175" aria-pressed="false">
         <div class="pic"><img src="assets/flamingo/06-elongated.png" alt="Elongated paddle" /></div>
         <div>
-          <div class="top"><h3>Elongated</h3><span class="p">$195</span></div>
+          <div class="top"><h3>Elongated</h3><span class="p">$175</span></div>
           <p class="desc">More reach. More speed. Extra leverage. A longer hitting surface with a slightly tighter sweet spot — favors singles and players who want more speed.</p>
           <div class="state"><i></i><span>Select</span></div>
         </div>
@@ -659,12 +624,6 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
     </details>
 
     <details class="qa">
-      <!-- FLAMINGO TODO: gate#1 — rewrite FAQ for Flamingo warranty term -->
-      <summary>What does the Lifetime Warranty on Construction actually cover?<span class="ico">+</span></summary>
-      <div class="ans"><p>Coverage on the carbon face and the Atomic Foam Core for as long as the original owner plays. If the construction of the paddle fails — the face or the core — Proton stands behind it. The warranty travels with the original owner and is not transferable on resale. Normal surface wear from play is not classified as a construction defect. Claim mechanics confirmed at checkout and care guide.</p></div>
-    </details>
-
-    <details class="qa">
       <summary>How is the roughness different from a textured or coated paddle?<span class="ico">+</span></summary>
       <div class="ans"><p>The roughness is part of the carbon itself, structurally integrated during construction. It's structural — the face is rough because the carbon is rough. That's a different thing from a finish or treatment that sits on the surface. The texture is built into the aerospace grade carbon fiber, the same composite discipline used in high-stress structural applications.</p></div>
     </details>
@@ -676,7 +635,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
 
     <details class="qa">
       <summary>13mm or 15mm — what's the difference?<span class="ico">+</span></summary>
-      <div class="ans"><p>13mm is faster pop. Less dwell time on the face, quicker return on counters and put-aways. 15mm is more control. More dwell time on the face, steadier on resets, drops, and dinks. Same Atomic Foam Core, same AeroGrade Construction — the difference is feel.</p></div>
+      <div class="ans"><p>13mm is faster pop. Less dwell time on the face, quicker return on counters and put-aways. 15mm is more control. More dwell time on the face, steadier on resets, drops, and dinks. Same Velocity Foam Core, same AeroGrade Construction — the difference is feel.</p></div>
     </details>
   </div>
 </section>
@@ -684,10 +643,9 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
 <!-- ============ S12 · CLOSE ============ -->
 <section class="bg-2 center">
   <div class="wrap">
-    <!-- FLAMINGO TODO: close anchor: "Atomic Foam Core"->"Velocity Core"; drop "Backed for life" -->
-      <p class="anchor" style="margin-top:0;"><span class="grad">The Atomic Foam Core paddle. Optimized Spin. Backed for life.</span></p>
-    <div class="close-cta"><button class="btn" style="height:64px;font-size:16px;padding:0 42px;">Add Flamingo to Cart — Backed for Life <span class="arr">→</span></button></div>
-    <p class="close-micro">Lifetime warranty on construction. 30-day money-back. Dual-stamp UPA + USA Pickleball.</p>
+      <p class="anchor" style="margin-top:0;"><span class="grad">The Velocity Foam Core paddle. Optimized Spin. Built for Pop &amp; Feel.</span></p>
+    <div class="close-cta"><button class="btn" style="height:64px;font-size:16px;padding:0 42px;">Add Flamingo to Cart <span class="arr">→</span></button></div>
+    <p class="close-micro">Built for pop &amp; feel. 30-day money-back. Dual-stamp UPA + USA Pickleball.</p>
   </div>
 </section>
 
@@ -698,7 +656,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
       <div>
         <img class="foot-logo" src="assets/brand/proton-atom.png" alt="Proton Sports" />
         <div class="lead">Powered by Proton.</div>
-        <div class="blurb">Proton Sports — premium pickleball paddles, designed in the United States. AeroGrade Construction, dual-stamp certified, backed for life.</div>
+        <div class="blurb">Proton Sports — premium pickleball paddles, designed in the United States. AeroGrade Construction, dual-stamp certified, built for pop and feel.</div>
       </div>
       <div class="fcol"><div class="h">Shop</div><a href="#">Series Three</a><a href="#">Tour Bag</a><a href="#">Hats</a><div style="font-size:12.5px;color:var(--bone-4);margin-top:10px;line-height:1.5;">Overgrips, apparel and Care Kit soon</div></div>
       <div class="fcol"><div class="h">Story</div><a href="#">Construction</a><a href="#">Charles Darling</a><a href="#">Proton Tour</a></div>
@@ -707,13 +665,13 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
     </div>
     <div class="fbar">
       <span>© 2026 Proton Sports · Designed in the United States</span>
-      <span>Dual-stamp UPA + USA Pickleball · Lifetime warranty on construction</span>
+      <span>Dual-stamp UPA + USA Pickleball · Built for pop and feel</span>
     </div>
   </div>
 </footer>
 
 <!-- ============ STICKY MOBILE CTA ============ -->
-<div class="sticky-mobile"><button class="btn">Add Flamingo to Cart — Backed for Life <span class="arr">→</span></button></div>
+<div class="sticky-mobile"><button class="btn">Add Flamingo to Cart <span class="arr">→</span></button></div>
 
 <script>
 (function(){
@@ -736,7 +694,7 @@ footer{ background:var(--ink-1); border-top:1px solid var(--hair-2); padding:cla
   // ---- Shared SKU state (hero chips + selector cards stay in sync) ----
   var state = { shape:'Wide-Body', shapePrice:175, thick:'15mm' };
 
-  function priceFor(shape){ return shape === 'Elongated' ? 195 : 175; }
+  function priceFor(shape){ return 175; }
 
   function render(){
     state.shapePrice = priceFor(state.shape);
